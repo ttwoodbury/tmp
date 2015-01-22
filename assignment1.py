@@ -188,6 +188,7 @@ dif_oos.append((-(errors_oos(d_yeild)**2-errors_noos(eprem)**2)).loc[1891:].cums
 dif_is = (errors_n(eprem)**2).cumsum() - (errors_is(p_e)**2).cumsum()
 
 #---Regressions from Various Constraints ------
+
 def prediction(type):
 	preds = []
 	preds.extend([np.nan]*4)

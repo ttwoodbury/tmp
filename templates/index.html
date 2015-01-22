@@ -3,10 +3,18 @@
 <title>My Assignment</title>
 
 <h1>Title</h1>
-<img src="{{ url_for('static', filename='foo.png') }}">
-
-<ul>
-  {% for datum in data %}
-    <li>{{ datum }}</li>
+<table>
+  {% for key in data %}
+    <tr>
+      <th>{{ key[0] }}</th>
+      <th>{{ key[1] }}</th>
+    </tr>
+    {% for col in data[key] %}
+      <tr>
+        <td>{{ col }}</td>
+        <td>{{ data[key][col] }}</td>
+      </tr>
+    {% endfor %}
   {% endfor %}
-</ul>
+</table>
+<img src="{{ url_for('static', filename='foo.png') }}">

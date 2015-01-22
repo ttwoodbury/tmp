@@ -2,5 +2,11 @@
 
 <title>My Assignment</title>
 
-<h1>My Assignment</h1>
+<h1>Title</h1>
 <img src="{{ url_for('static', filename='foo.png') }}">
+
+<ul>
+  {% for datum in data %}
+    <li>{{ datum }}</li>
+  {% endfor %}
+</ul>

@@ -1,20 +1,30 @@
 <!doctype html>
 
-<title>My Assignment</title>
+<head>
 
+  <title>My Assignment</title>
+  <link 
+    rel="stylesheet"
+    href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="/static/styles/style.css">
+</head>
 <h1>Title</h1>
-<table>
-  {% for key in data %}
-    <tr>
-      <th>{{ key[0] }}</th>
-      <th>{{ key[1] }}</th>
-    </tr>
-    {% for col in data[key] %}
-      <tr>
-        <td>{{ col }}</td>
-        <td>{{ data[key][col] }}</td>
+<div class="col-left col-sm-6">
+  <table class="table table-hover data-table">
+    {% for key in data %}
+      <tr class="active">
+        <th>{{ key[0] }}</th>
+        <th>{{ key[1] }}</th>
       </tr>
+      {% for col in data[key] %}
+        <tr>
+          <td>{{ col }}</td>
+          <td>{{ data[key][col] }}</td>
+        </tr>
+      {% endfor %}
     {% endfor %}
-  {% endfor %}
-</table>
-<img src="{{ url_for('static', filename='foo.png') }}">
+  </table>
+</div>
+<div class="col-right col-sm-6">
+  <img src="{{ url_for('static', filename='foo.png') }}">
+</div>
